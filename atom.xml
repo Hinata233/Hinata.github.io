@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hexo</title>
+  
+  
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2021-02-21T10:37:50.112Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>Hinata</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>算法</title>
+    <link href="http://example.com/2021/02/21/%E7%AE%97%E6%B3%95/"/>
+    <id>http://example.com/2021/02/21/%E7%AE%97%E6%B3%95/</id>
+    <published>2021-02-21T10:36:48.000Z</published>
+    <updated>2021-02-21T10:37:50.112Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="STL"><a href="#STL" class="headerlink" title="STL"></a>STL</h1><h2 id="大纲"><a href="#大纲" class="headerlink" title="大纲"></a>大纲</h2><h3 id="顺序式容器"><a href="#顺序式容器" class="headerlink" title="顺序式容器"></a>顺序式容器</h3><p>顺序式容器包括vector、 list、deque、queue、 priority_queue,stack 等,它们的特点如下。</p><ul><li><p>vector:动态数组,从末尾能快速插入与删除,直接访问任何元素</p></li><li><p>list:双链表,从任何地方快速插入与删除。</p></li><li><p>deque:双向队列,从前面或后面快速插入与删除,直接访问任何元素。queue:队列,先进先出。</p></li><li><p>priority_queue:优先队列,最高优先级元素总是第一个出列。 stack:栈,后进先出。</p></li></ul><h3 id="关联式容器"><a href="#关联式容器" class="headerlink" title="关联式容器"></a>关联式容器</h3><p>关联式容器包括set、multiset、map、multimap等。</p><ul><li>set:集合,快速查找,不允许重复值。</li><li>multiset:快速查找,允许重复值。</li><li>map:一对多映射,基于关键字快速查找,不允许重复值。. </li><li>multimap:一对多映射,基于关键字快速查找,允许重复值。</li></ul><h2 id="vector"><a href="#vector" class="headerlink" title="vector"></a>vector</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><table><thead><tr><th>功能</th><th>例子</th><th>说明</th></tr></thead><tbody><tr><td>定义int型数组</td><td>vector &lt; int &gt; a;</td><td>默认初始化,a为空</td></tr><tr><td></td><td>vector<int > b(a);</td><td>用α定义b</td></tr><tr><td></td><td>vector<int > a(100);</td><td>a有100个值为0的元素</td></tr><tr><td></td><td>vector <int > a(100，6);</td><td>100个值为6的元素</td></tr><tr><td>定义string型数组</td><td>vector&lt; string &gt;a(10, “null”);</td><td>10个值为null的元素</td></tr><tr><td></td><td>vector<string > vec( 10, “hello”);</td><td>10个值为hello的元素</td></tr><tr><td></td><td>vector<string > b(a. begin()，a.end());</td><td>b是α的复制</td></tr><tr><td>定义结构型数组</td><td>struct point{int x, y;};vector&lt; point&gt; a;</td><td>a用来存坐标</td></tr></tbody></table><p>定义一个二维数组：</p><ul><li>vector&lt; int &gt;a[ MAXN];</li></ul><p>它的第一维大小是固定的 MAXN,第二维是动态的。</p><h3 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h3><table><thead><tr><th>功能</th><th>例子</th><th>说明</th></tr></thead><tbody><tr><td>赋值</td><td>a. push_back(100);</td><td>在尾部添加元素</td></tr><tr><td>元素个数</td><td>int size=a. size();</td><td>元素个数</td></tr><tr><td>是否为空</td><td>bool isEmpty= a.empty();</td><td>判断是否为空</td></tr><tr><td>打印</td><td>cout&lt;&lt; a[o]&lt;&lt;endl;</td><td>打印第一个元素</td></tr><tr><td>中间插入</td><td>a. insert(a. begin()＋i，k);</td><td>在第i个元素前面插入k</td></tr><tr><td>尾部插入</td><td>a. push_back(8);</td><td>尾部插入值为8的元素</td></tr><tr><td>尾部插入</td><td>a. insert(a. end()，10,5);</td><td>尾部插入10个值为5的元素</td></tr><tr><td>删除尾部</td><td>a.pop_back();</td><td>删除末尾元素</td></tr><tr><td>删除区间</td><td>a.crase(a.begin()+i，a. begin()+j);</td><td>删除区间[i，j-1]的元素</td></tr><tr><td>删除元素</td><td>a. erase(a.begin()＋2);</td><td>删除第3个元素</td></tr><tr><td>调整大小</td><td>a. resize(n)</td><td>数组大小变为n</td></tr><tr><td>清空</td><td>a.clear();</td><td>清空</td></tr><tr><td>翻转</td><td>reverse(a. begin()， a. end());</td><td>用函数reverse()翻转数组</td></tr><tr><td>排序</td><td>sort(a. begin(),a.end());</td><td>用函数sort()排序,从小到大排</td></tr></tbody></table><h2 id="栈和stack"><a href="#栈和stack" class="headerlink" title="栈和stack"></a>栈和stack</h2><p>栈的特点是“先进后出”。</p><ul><li>头文件<stack></li></ul><table><thead><tr><th>例子</th><th>说明</th></tr></thead><tbody><tr><td>stack &lt; Type &gt; s;</td><td>定义栈，Type为数据类型，例如int,float,char等</td></tr><tr><td>s. push( item);</td><td>把item放到栈顶</td></tr><tr><td>s.top();</td><td>返回栈顶的元素,但不会删除</td></tr><tr><td>s. pop();</td><td>删除栈顶的元素,但不会返回.在出栈时需要进行两步操作,即1先top()获得栈顶元素，再pop()删除栈顶元素</td></tr><tr><td>s.size();</td><td>返回栈中元素的个数</td></tr><tr><td>s. empty();</td><td>检查栈是否为空，如果为空，返回true,否则返回false</td></tr></tbody></table><h2 id="队列和queue"><a href="#队列和queue" class="headerlink" title="队列和queue"></a>队列和queue</h2><p>队列的特点是“先进先出”。</p><ul><li>头文件<queue></li></ul><table><thead><tr><th>例子</th><th>说明</th></tr></thead><tbody><tr><td>queue &lt; Type&gt;q;</td><td>定义栈，Type为数据类型，例如int,float,char等</td></tr><tr><td>q. push(iten);</td><td>把item放进队列</td></tr><tr><td>q. front();</td><td>返回队首元素，但不会删除</td></tr><tr><td>q. pop();</td><td>删除队首元素</td></tr><tr><td>q. back();</td><td>返回队尾元素</td></tr><tr><td>q.size();</td><td>返回元素个数</td></tr><tr><td>q. empty();</td><td>检查队列是否为空</td></tr></tbody></table><h2 id="优先队列和priority-queue"><a href="#优先队列和priority-queue" class="headerlink" title="优先队列和priority_queue"></a>优先队列和priority_queue</h2><p>优先队列,顾名思义就是优先级最高的先出队。它是队列和排序的完美结合,不仅可以存储数据,还可以将这些数据按照设定的规则进行排序。每次的 push和 pop操作,优先队列都会动态调整,把优先级最高的元素放在前面。</p><table><thead><tr><th>例子</th><th>说明</th></tr></thead><tbody><tr><td>q. top();</td><td>返回具有最高优先级的元素值,但不删除该元素</td></tr><tr><td>q. pop();</td><td>删除最高优先级元素</td></tr><tr><td>q.push( item);</td><td>插入新元素</td></tr></tbody></table><p>在STL中,优先队列是用二叉堆来实现的,在队列中push一个数或pop一个数,复杂度都是O(log2n)。</p><p>可以用优先队列对数据排序:设定数据小的优先级高,把所有数push进优先队列后一个个 top出来,就得到了从小到大的排序。其总复杂度是O(nlog2n)。</p><p>图论的 Dijkstra算法的程序实现用STL的优先队列能极大地简化代码</p><h2 id="链表和list"><a href="#链表和list" class="headerlink" title="链表和list"></a>链表和list</h2><p>STL的list是数据结构的双向链表,它的内存空间可以是不连续的,通过指针来进行数据的访问,它可以高效率地在任意地方删除和插入,插人和删除操作是常数时间的。</p><p>list和 vector的优缺点正好相反,它们的应用场景不同。</p><ul><li><p>vector：插入和删除操作少,随机访问元素频繁。</p></li><li><p>list：插人和删除频够.随机访问较心</p></li></ul><h2 id="set"><a href="#set" class="headerlink" title="set"></a>set</h2><p>set就是集合。STL的set用二叉搜索树实现,集合中的每个元素只出现一次,并且是排好序的。访问元素的时间复杂度是O(log2n),非常高效。</p><p>set和map在竞赛题中的应用很广泛,特别是需要用二叉搜索树处理数据的题目,如果用set 或map实现,能极大地简化代码。</p><table><thead><tr><th>例子</th><th>说明</th></tr></thead><tbody><tr><td>set &lt; Type&gt; A;</td><td>定义</td></tr><tr><td>A.insert( item);</td><td>把item放进set</td></tr><tr><td>A.erase( item);</td><td>删除元素item</td></tr><tr><td>A.clear();</td><td>清空set</td></tr><tr><td>A. empty ();</td><td>判断是否为空</td></tr><tr><td>A.size();</td><td>返回元素个数</td></tr><tr><td>A.find(k);</td><td>返回一个迭代器，指向键值k</td></tr><tr><td>A.lower_bound(k);</td><td>返回一个迭代器,指向键值不小于k的第一个元素</td></tr><tr><td>A.upper_bound();</td><td>返回一个迭代器,指向键值大于k的第一个元素</td></tr></tbody></table><h2 id="map"><a href="#map" class="headerlink" title="map"></a>map</h2><p>利用STL中的map容器可以快速地实现这个查找,复杂度是O(log2n)。</p><p>map是关联容器,它实现从键(key)到值(value)的映射。map效率高的原因是它用平衡二叉搜索树来存储和访问。</p><table><thead><tr><th>功能</th><th>例子</th><th>说明</th></tr></thead><tbody><tr><td>定义</td><td>map&lt;string，int &gt; student</td><td>存储学生的name和id</td></tr><tr><td>赋值</td><td>student[“Tom”]=15</td><td>这里把“Tom”当成普通数组的下标来使用</td></tr><tr><td>查找</td><td>student[“Tom”]</td><td>表示他的id,不用再去搜索所有的姓名</td></tr></tbody></table><h2 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h2><p>STL 的排序函数sort()是算法竞赛中最常用的函数之一,它的定义有以下两种:</p><ul><li>(1）void sort(RandomAccessIterator first,RandomAccessIterator last);</li><li>(2)void sort(RandomAccessIterator first,RandomAccessIterator last,Compare comp);</li></ul><p>返回值:无。</p><p>复杂度:O(nlog2n)。</p><p>注意,它排序的范围是[first,last),包括first,不包括 last。</p><h3 id="sort-的比较函数"><a href="#sort-的比较函数" class="headerlink" title="sort()的比较函数"></a>sort()的比较函数</h3><p>排序是对比元素的大小。sort()可以用自定义的比较函数进行排序,也可以用系统的4种函数排序,即 less()、 greater()、less_equal()、greater_equal()。在默认情况下,程序是按从小到大的顺序排序的,less()可以不写。</p><h3 id="stable-sort"><a href="#stable-sort" class="headerlink" title="stable_sort()"></a>stable_sort()</h3><p>当排序元素相等时,保留原来的顺序。在对结构体排序时,当结构体中的排序元素相等时,如果需要保留原序,可以用stable_sort()。</p><h3 id="partial-sort"><a href="#partial-sort" class="headerlink" title="partial_sort()"></a>partial_sort()</h3><p>局部排序。例如有10个数字,求最小的5个数。如果用sort(),需要先全部排序,再输出前5个;而用partial_sort()可以直接输出前5个。</p><h2 id="next-per-utation"><a href="#next-per-utation" class="headerlink" title="next_per,utation()"></a>next_per,utation()</h2><p>STL提供求下一个排列组合的函数next_permutation)。例如3个字符a、b、c组成的序列, next_permutation()能按字典序返回6个组合,即abc、acb, bac、 bca,cab、cba。</p><p>函数next_permutation()的定义有下面两种形式:</p><ul><li>(1) bool next_permutation(Bidirectionallterator first,Bidirectionallterator last);</li><li>(2) bool next_permutation(BidirectionalIterator first， Bidirectionallterator last,Comparecomp);</li></ul><p>返回值:如果没有下一个排列组合,返回false,否则返回true。每执行next_permutation()一次,就会把新的排列放到原来的空间里。</p><p>复杂度:O(n)。</p><p>注意,它排列的范围是[first，last),包括first,不包括last。</p><p>在使用next_permutation()的时候,初始厅列一股是一个字典序最小的序列,如果不是,可以用sort()排序,得到最小序列,然后再使用next_permutation()。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;STL&quot;&gt;&lt;a href=&quot;#STL&quot; class=&quot;headerlink&quot; title=&quot;STL&quot;&gt;&lt;/a&gt;STL&lt;/h1&gt;&lt;h2 id=&quot;大纲&quot;&gt;&lt;a href=&quot;#大纲&quot; class=&quot;headerlink&quot; title=&quot;大纲&quot;&gt;&lt;/a&gt;大纲&lt;/h2&gt;&lt;h</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://example.com/2021/02/21/hello-world/"/>
+    <id>http://example.com/2021/02/21/hello-world/</id>
+    <published>2021-02-21T07:50:46.333Z</published>
+    <updated>2021-02-21T07:50:46.333Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>

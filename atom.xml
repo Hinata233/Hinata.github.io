@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-03-07T07:57:05.684Z</updated>
+  <updated>2021-03-07T08:01:29.318Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,18 +17,19 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Disjoint-set data structure</title>
-    <link href="http://example.com/2021/03/07/Disjoint-set%20data%20structure/"/>
-    <id>http://example.com/2021/03/07/Disjoint-set%20data%20structure/</id>
-    <published>2021-03-07T07:47:12.000Z</published>
-    <updated>2021-03-07T07:57:05.684Z</updated>
+    <title>structure</title>
+    <link href="http://example.com/2021/03/07/structure/"/>
+    <id>http://example.com/2021/03/07/structure/</id>
+    <published>2021-03-07T08:00:33.000Z</published>
+    <updated>2021-03-07T08:01:29.318Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="disjoint-set"><a href="#disjoint-set" class="headerlink" title="disjoint set"></a>disjoint set</h1><p>Disjoint-set data structure is a kind of tree data structure, which is used to deal with the merging and query of disjoint sets.   </p>]]></content>
+    <content type="html"><![CDATA[<p>Disjoint-set data structure is a kind of tree data structure, which is used to deal with the merging and query of disjoint sets.   </p>]]></content>
     
     
       
       
-    <summary type="html">&lt;h1 id=&quot;disjoint-set&quot;&gt;&lt;a href=&quot;#disjoint-set&quot; class=&quot;headerlink&quot; title=&quot;disjoint set&quot;&gt;&lt;/a&gt;disjoint set&lt;/h1&gt;&lt;p&gt;Disjoint-set data structure is</summary>
+    <summary type="html">&lt;p&gt;Disjoint-set data structure is a kind of tree data structure, which is used to deal with the merging and query of disjoint sets.   &lt;/p&gt;
+</summary>
       
     
     
